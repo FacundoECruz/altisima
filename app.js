@@ -16,14 +16,24 @@ function generarTemplate(player) {
     let html = "";
     let i = 0;
     listaPlayers.forEach(function (player) {
-        html += `<li id="player_${i}"> ${player.name} <label for="apuesta">Apuesta</label>
-        <input class="apuesta"type="number" id="apuestaPlayer_${i}">
-        <select aria-label="Default select example" name="pierde" id="pierdePlayer_${i}">
-            <option value="0">pierde</option>
-            <option value="-1">-1</option>
-            <option value="-2">-2</option>
-            <option value="-3">-3</option>
-        </select><li>`;
+        html += `<div class="d-flex">
+                    <div class="p-2 flex-grow-1">
+                        <li class="fs-4 align-self-center" id="player_${i}"> ${player.name}
+                    </div>
+                    <div class="p-2 align-self-center" 
+                        <label for="apuesta">Apuesta</label>
+                        <input type="number" id="apuestaPlayer_${i}">
+                     </div>
+                    <div class="p-2 align-self-center">
+                        <select aria-label="Default select example" name="pierde" id="pierdePlayer_${i}">
+                           <option value="0">pierde</option>
+                            <option value="-1">-1</option>
+                            <option value="-2">-2</option>
+                            <option value="-3">-3</option>
+                        </select>
+                    </div>
+                        </li>
+                </div>`;
         i++;
     });
     document.getElementById("list").innerHTML = html;
