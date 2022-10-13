@@ -16,6 +16,7 @@
         <div class="row align-items-start">
             <div class="col">
                 <h1>Altisima</h1>
+                <img src="cuatros.jpg">
                 <form id="namesForm" action="/apuesta">
                     <label class="form-label" for="name">Nombre:</label>
                     <input class="form-control" type="text" name="name" id="name" required>
@@ -23,9 +24,11 @@
                 </form>
             </div>
             <div class="col">
-                <ul id="list"></ul>
+                <div class="card">
+                    <ul class="list-group list-group-flush" id="list"></ul>
 
-                <button class="btn btn-primary" onclick="armarTabla(event)">Resultados</button>
+                    <button class="btn btn-primary" onclick="armarTabla(event)">Resultados</button>
+                </div>
             </div>
             <div class="col">
                 <ul id="tabla"></ul>

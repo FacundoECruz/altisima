@@ -16,9 +16,9 @@ function generarTemplate(player) {
     let html = "";
     let i = 0;
     listaPlayers.forEach(function (player) {
-        html += `<li id="player_${i}"> ${player.name} <label class="form-label" for="apuesta">Apuesta</label>
-        <input class="form-control" type="number" id="apuestaPlayer_${i}">
-        <select class="form-select" aria-label="Default select example" name="pierde" id="pierdePlayer_${i}">
+        html += `<li id="player_${i}"> ${player.name} <label for="apuesta">Apuesta</label>
+        <input class="apuesta"type="number" id="apuestaPlayer_${i}">
+        <select aria-label="Default select example" name="pierde" id="pierdePlayer_${i}">
             <option value="0">pierde</option>
             <option value="-1">-1</option>
             <option value="-2">-2</option>
