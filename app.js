@@ -63,7 +63,20 @@ function guardarData() {
     }
 }
 
+function ordenarTabla() {
+    listaPlayers.sort((a, b) => {
+        if (a.score > b.score) {
+            return -1;
+        } else if (a.score < b.score) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+}
+
 function imprimirTabla() {
+    ordenarTabla()
     let html = "";
     let i = 0;
     listaPlayers.forEach(function (player) {
