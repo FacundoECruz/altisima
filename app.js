@@ -63,8 +63,8 @@ function guardarData() {
     }
 }
 
-function ordenarTabla() {
-    listaPlayers.sort((a, b) => {
+function ordenarTabla(copiaTabla) {
+    copiaTabla.sort((a, b) => {
         if (a.score > b.score) {
             return -1;
         } else if (a.score < b.score) {
@@ -75,11 +75,11 @@ function ordenarTabla() {
     });
 }
 
-function imprimirTabla() {
-    ordenarTabla()
+function imprimirTabla(copiaTabla) {
+    ordenarTabla(copiaTabla)
     let html = "";
     let i = 0;
-    listaPlayers.forEach(function (player) {
+    copiaTabla.forEach(function (player) {
         html += `<li class="list-group-item d-flex justify-content-between align-items-center">${player.name}
         <span class="badge bg-success rounded-pill">${player.score}</span></li>`;
         i++;
@@ -90,5 +90,6 @@ function imprimirTabla() {
 function armarTabla(event) {
     event.preventDefault();
     guardarData();
-    imprimirTabla();
+    let copiaTabla = [...listaPlayers]
+    imprimirTabla(copiaTabla);
 }
