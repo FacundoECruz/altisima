@@ -80,8 +80,8 @@ function imprimirTabla(copiaTabla) {
     let html = "";
     let i = 0;
     copiaTabla.forEach(function (player) {
-        html += `<li class="list-group-item d-flex justify-content-between align-items-center">${player.name}
-        <span class="badge bg-success rounded-pill">${player.score}</span></li>`;
+        html += `<li class="list-group-item d-flex justify-content-between align-items-center display-5">${player.name}
+        <h2>${player.score}</h2></li>`;
         i++;
     });
     document.getElementById("tabla").innerHTML = html;
