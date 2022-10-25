@@ -7,5 +7,9 @@ h1 {
 }
 
 h2 {
-    color: #f77f00
+    color: #d62828
+}
+
+input, option {
+    background-color: #eae2b7;
 }

@@ -18,7 +18,7 @@ function generarTemplate(player) {
     listaPlayers.forEach(function (player) {
         html += `<div class="d-flex">
                     <div class="p-2 flex-grow-1">
-                        <li class="fs-4 align-self-center" id="player_${i}"> ${player.name}
+                        <li style="color:#003049" class="fs-4 align-self-center" id="player_${i}"> ${player.name}
                     </div>
                     <div class="p-2 align-self-center" 
                         <label for="apuesta">Apuesta</label>
@@ -80,7 +80,7 @@ function imprimirTabla(copiaTabla) {
     let html = "";
     let i = 0;
     copiaTabla.forEach(function (player) {
-        html += `<li class="list-group-item d-flex justify-content-between align-items-center display-5">${player.name}
+        html += `<li style="color:#003049" class="list-group-item d-flex justify-content-between align-items-center display-6">${player.name}
         <h2>${player.score}</h2></li>`;
         i++;
     });

@@ -11,7 +11,7 @@
     <title>Altisima</title>
 </head>
 
-<body>
+<body style="background-color:#eae2b7">
     <div class="container text-center">
         <div class="row align-items-start">
             <div class="col">
@@ -20,18 +20,18 @@
                 <form id="namesForm" action="/apuesta">
                     <label class="form-label" for="name">Nombre:</label>
                     <input class="form-control" type="text" name="name" id="name" required>
-                    <button type="submit" class="btn btn-info">Agregar</button>
+                    <button type="submit" style="background-color:#f77f00" class="btn">Agregar</button>
                 </form>
             </div>
             <div class="col">
                 <div class="card">
-                    <ul class="list-group list-group-flush" id="list"></ul>
+                    <ul class="list-group list-group-flush" id="list" style="background-color:#fcbf49"></ul>
 
-                    <button class="btn btn-primary" onclick="armarTabla(event)">Resultados</button>
+                    <button style="background-color:#d62828" class="btn" onclick="armarTabla(event)">Resultados</button>
                 </div>
             </div>
             <div class="col">
-                <ul class="list-group" id="tabla"></ul>
+                <ul class="list-group" id="tabla" background-color: #eae2b7></ul>
             </div>
 
         </div>
