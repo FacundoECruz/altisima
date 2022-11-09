@@ -26,7 +26,7 @@ function generarTemplate(player) {
                      </div>
                     <div class="p-2 align-self-center">
                         <select aria-label="Default select example" name="pierde" id="pierdePlayer_${i}">
-                           <option value="0">pierde</option>
+                           <option value="0">gana</option>
                             <option value="-1">-1</option>
                             <option value="-2">-2</option>
                             <option value="-3">-3</option>
