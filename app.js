@@ -12,6 +12,8 @@ class Player {
   }
 }
 
+//INGRESAR Y RENDERIZAR NOMBRES
+
 function generarTemplate(player) {
   let html = "";
   let i = 0;
@@ -47,6 +49,8 @@ function agregarNombre(event) {
   generarTemplate();
 }
 
+//RESULTADOS
+
 const validarApuesta = () => {
   apuestaGeneral = [];
   for (let i = 0; i < listaPlayers.length; i++) {
@@ -55,16 +59,10 @@ const validarApuesta = () => {
   }
   const equalToZero = (currentValue) => currentValue == 0;
   const validacion = apuestaGeneral.every(equalToZero);
-  if(validacion){
-    console.log('ALERT!!!!!!!!!!!!!!')
-    return false
-  } else {
-    return true
-  }
+  return validacion;
 };
 
-function guardarData() {
-  validarApuesta();
+const resultados = () => {
   for (let i = 0; i < listaPlayers.length; i++) {
     const apuesta = document.querySelector(`#apuestaPlayer_${i}`);
     const pierde = document.querySelector(`#pierdePlayer_${i}`);
@@ -77,6 +75,12 @@ function guardarData() {
     apuesta.value = "";
     pierde.value = 0;
   }
+};
+
+function guardarData() {
+  validarApuesta();
+  console.log(validarApuesta);
+  resultados();
 }
 
 function ordenarTabla(copiaTabla) {
