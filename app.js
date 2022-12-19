@@ -53,32 +53,31 @@ const validarApuesta = () => {
     const pierde = document.querySelector(`#pierdePlayer_${i}`);
     apuestaGeneral[i] = pierde.value;
   }
-  const validacion = apuestaGeneral.every(v => v === 0);
-  console.log(validacion)
-  return validacion;
+  const equalToZero = (currentValue) => currentValue == 0;
+  const validacion = apuestaGeneral.every(equalToZero);
+  if(validacion){
+    console.log('ALERT!!!!!!!!!!!!!!')
+    return false
+  } else {
+    return true
+  }
 };
 
-function guardarData() 
+function guardarData() {
   validarApuesta();
-
-  if (!validarApuesta) {
-    //Display alert
-    console.log('ALERT')
-  } else {
-    for (let i = 0; i < listaPlayers.length; i++) {
-      const apuesta = document.querySelector(`#apuestaPlayer_${i}`);
-      const pierde = document.querySelector(`#pierdePlayer_${i}`);
-      if (pierde.value == 0) {
-        listaPlayers[i].score =
-          listaPlayers[i].score + 5 + parseInt(apuesta.value);
-      } else {
-        listaPlayers[i].score = listaPlayers[i].score + parseInt(pierde.value);
-      }
-      apuesta.value = "";
-      pierde.value = 0;
+  for (let i = 0; i < listaPlayers.length; i++) {
+    const apuesta = document.querySelector(`#apuestaPlayer_${i}`);
+    const pierde = document.querySelector(`#pierdePlayer_${i}`);
+    if (pierde.value == 0) {
+      listaPlayers[i].score =
+        listaPlayers[i].score + 5 + parseInt(apuesta.value);
+    } else {
+      listaPlayers[i].score = listaPlayers[i].score + parseInt(pierde.value);
     }
+    apuesta.value = "";
+    pierde.value = 0;
   }
-
+}
 
 function ordenarTabla(copiaTabla) {
   copiaTabla.sort((a, b) => {
