@@ -78,9 +78,12 @@ const resultados = () => {
 };
 
 function guardarData() {
-  validarApuesta();
-  console.log(validarApuesta);
-  resultados();
+  if (!validarApuesta()) {
+    resultados();
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function ordenarTabla(copiaTabla) {
@@ -109,7 +112,10 @@ function imprimirTabla(copiaTabla) {
 
 function armarTabla(event) {
   event.preventDefault();
-  guardarData();
-  let copiaTabla = [...listaPlayers];
-  imprimirTabla(copiaTabla);
+  if (guardarData()) {
+    let copiaTabla = [...listaPlayers];
+    imprimirTabla(copiaTabla);
+  } else {
+    alert("En cada ronda tiene que haber al menos uno que pierda!!");
+  }
 }
