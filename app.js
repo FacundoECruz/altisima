@@ -59,7 +59,7 @@ const validarApuesta = () => {
   }
   const equalToZero = (currentValue) => currentValue == 0;
   const validacion = apuestaGeneral.every(equalToZero);
-  return validacion;
+  // return validacion;
 };
 
 const resultados = () => {
