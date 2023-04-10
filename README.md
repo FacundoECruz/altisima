@@ -1,2 +1,2 @@
 # altisima
-Scorekeeper for card game
+Scoreboard for card game, built for practice HTML, CSS, and JS
